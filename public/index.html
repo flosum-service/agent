@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlosumAgent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+      background: #dfe6e9;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .title {
+      font-size: 60px;
+      color: #2d3436;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      font-size: 30px;
+      font-weight: 100;
+    }
+
+    .version {
+      margin-top: 25px;
+      font-size: 24px;
+      font-weight: 100;
+      color: #ccc;
+    }
+
+    .version:hover {
+      font-weight: 500;
+      color: #2d3436;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">Flosum Agent</div>
+    <div class="subtitle">Application is ready to use</div>
+    <div class="version"></div>
+  </div>
+
+  <script>
+    fetch('api/info').then((response) => response.json()).then((data) => {
+      document.querySelector('.version').textContent = `Build version: ${data.version}`;
+    })
+  </script>
+
+</body>
+
+</html>
