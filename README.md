@@ -1,0 +1,29 @@
+# Flosum Agent
+
+**Version:** 4.7.24-apple.2
+
+## Environment Variables
+```env
+SALESFORCE_TOKEN=
+DATA_MASKING_BATCH_DEPLOY_PARALLEL_COUNT=
+IGNORE_FLOSUM_GIT_NAMESPACE=
+IGNORE_FLOSUM_NAMESPACE=
+DEBUG=flosum-agent*
+APP_DATA_PATH=/home/node
+PROCESS_MAX_MEMORY_SIZE=
+SMTP_HOST=
+SMTP_PORT=
+SMTP_SECURE=
+SMTP_TRACK_OPENINGS=
+SMTP_FROM=
+SMTP_AUTH_TYPE=
+SMTP_AUTH_USER=
+SMTP_AUTH_PASSWORD=
+```
+
+## Install & Run
+```bash
+npm install --only=production
+npm run start
+```
+
