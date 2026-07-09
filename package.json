@@ -1,0 +1,108 @@
+{
+  "name": "flosum_agent",
+  "version": "4.8.3",
+  "description": "Flosum Agent",
+  "main": "index.js",
+  "engines": {
+    "node": "20.x"
+  },
+  "scripts": {
+    "start:dev": "node dist/",
+    "start": "node .",
+    "dev": "nodemon server/index.ts",
+    "lint": "eslint server --fix",
+    "test": "jest",
+    "compile": "ts-node build.ts && tsc --build tsconfig.build.json && babel dist -d dist",
+    "build-version": "npm run compile && bash build.version.sh"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint server --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@flosum/data-masking": "1.1.0",
+    "@flosum/salesforce": "1.15.5",
+    "@flosum/utils": "1.0.14",
+    "@salesforce/cli": "2.81.7",
+    "@xmldom/xmldom": "^0.8.10",
+    "adm-zip": "0.5.10",
+    "axios": "1.8.3",
+    "axios-retry": "4.0.0",
+    "body-parser": "1.20.3",
+    "class-transformer": "0.5.1",
+    "class-validator": "0.14.0",
+    "crc-32": "1.2.2",
+    "cron": "2.2.0",
+    "cross-spawn": "7.0.5",
+    "csv-parse": "5.5.2",
+    "csv-stringify": "6.4.4",
+    "debug": "4.3.4",
+    "dotenv": "10.0.0",
+    "express": "4.21.2",
+    "express-http-proxy": "1.6.3",
+    "express-openapi-validator": "5.3.8",
+    "form-data": "4.0.0",
+    "helmet": "5.1.0",
+    "https-proxy-agent": "7.0.6",
+    "jszip": "3.10.1",
+    "minimist": "1.2.8",
+    "nocache": "2.1.0",
+    "nodemailer": "6.9.13",
+    "object-sizeof": "^2.6.3",
+    "reflect-metadata": "0.1.13",
+    "sfcc-ci": "2.12.0",
+    "shortid": "2.2.17",
+    "typedi": "0.10.0",
+    "uuid": "9.0.1",
+    "vkbeautify": "0.99.3",
+    "x2js": "3.4.4",
+    "xml2js": "0.6.2",
+    "proxy-from-env": "^1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.20.7",
+    "@babel/core": "7.20.12",
+    "@types/adm-zip": "0.5.0",
+    "@types/cron": "2.0.0",
+    "@types/cross-spawn": "6.0.2",
+    "@types/debug": "4.1.5",
+    "@types/express": "4.17.13",
+    "@types/express-http-proxy": "1.6.3",
+    "@types/jest": "26.0.23",
+    "@types/minimist": "1.2.2",
+    "@types/node": "20.11.0",
+    "@types/nodemailer": "6.4.14",
+    "@types/shelljs": "0.8.8",
+    "@types/shortid": "0.0.29",
+    "@types/uuid": "8.3.4",
+    "@types/vkbeautify": "0.99.2",
+    "@types/xml2js": "0.4.11",
+    "@types/proxy-from-env": "1.0.4",
+    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/parser": "5.48.2",
+    "babel-plugin-module-resolver": "5.0.0",
+    "eslint": "8.32.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "javascript-obfuscator": "4.0.0",
+    "jest": "27.0.6",
+    "lint-staged": "13.0.3",
+    "nodemon": "2.0.20",
+    "prettier": "2.3.1",
+    "ts-jest": "27.0.3",
+    "ts-node": "10.8.1",
+    "tsconfig-paths": "4.1.0",
+    "typescript": "4.7.4"
+  },
+  "overrides": {
+    "javascript-obfuscator": {
+      "class-validator": "0.14.0"
+    },
+    "tough-cookie": "4.1.3"
+  }
+}
